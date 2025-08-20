@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff7ea;
+  padding: 20px;
+  margin: 0;
+  border-box: box-sizing;
+}
+
+.wrapper {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: minmax(min-content, max-content);
+  gap: 20px;
+  align-self: center;
+  justify-self: center;
+}
+
+#search {
+  width: 30%;
+  padding: 15px 20px;
+  margin: 15px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.surah-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-height: 90vh;
+  overflow-y:auto;
+  background-color:#fff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.surah-item {
+  padding: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-radius: 8px;
+  border: 1px solid #72603f;
+  background-color: #f8ebd5;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s; 
+}
+
+.surah-item:hover{
+  background-color: #3f2d0c;
+  transform: scale(1.01);
+  color: #fff;
+}
+
+.surah-item .left .surah-text-title-surah, .surah-item .left .surah-text-translation, .surah-item .right .surah-text-arab, .surah-item .right .surah-verses{
+  margin: 0;
+}
+
+.surah-item .left .surah-text-translation,  .surah-item .right .surah-verses{
+  color: #737372ff;
+  font-size: 0.85rem
+}
+
+.surah-item .left{
+  display: flex;
+  flex-direction: column;
+}
+
+.surah-item .right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+.surah-item .right, .surah-item .left{
+  gap: 5px;
+}
+
+.detail-surah{
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.detail-surah #content{
+  max-height: 50vh;
+  padding: 20px 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  overflow-y; auto;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
